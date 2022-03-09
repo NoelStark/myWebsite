@@ -1,0 +1,334 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+html {
+  /*Creates a smooth scroll*/
+  scroll-behavior: smooth;
+}
+:root {
+  --cardMaxHeight: 30.5em;
+  --cardPadding: -5em;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.navbar > img, /*Have everything on the navbar on same row*/
+.navbar > p {
+  display: inline-block;
+}
+.navbar {
+  /*The left side of the navbar(Picture and Alpha Family)*/
+  display: inline;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  font-family: Babas Neue;
+}
+
+.navbar a {
+  /*Changes the color of Alpha Family on navbar*/
+  color: white;
+}
+img {
+  /*Handles the image in top left corner*/
+  height: 100px;
+  width: auto;
+  vertical-align: middle;
+  margin-top: -16px;
+}
+
+nav {
+  /*The actual navbar*/
+  background: #080808;
+  height: 70px;
+  width: 100%;
+  vertical-align: middle; /*Alpha Family is centered on navbar*/
+  position: fixed; /*The navbar is fixed and doesnt disappear*/
+  z-index: 2;
+}
+
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 79px;
+  margin: 0 15px;
+}
+nav ul li a {
+  color: white;
+  font-size: 19px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+li a.active,
+li a:hover {
+  background: #343435;
+  transition: 0.5s;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+section {
+  /*For the different sections when you scroll down*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+section h1 {
+  font-size: 4rem;
+  margin-top: 100px;
+  color: white;
+}
+
+section p {
+  font-size: 1.5rem;
+}
+
+section#home {
+  /*The first 'page' has this background*/
+  /* background: url(alphafamily_bgs.jpg) no-repeat center center/cover;*/
+  background: url(bilder/IMG_4822.jpg) no-repeat center center/cover;
+}
+
+/*------------------------------------------------------------------------*/
+section#about {
+  /*Next background is only a color*/
+  background-color: rgb(87, 81, 81);
+}
+section#about .container {
+  text-align: center;
+  width: 70%;
+  height: 60%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 1em;
+  padding: 0 10px;
+  color: white;
+}
+
+.case1 {
+  grid-column: 1;
+  grid-row: 1/4;
+  border-radius: 1%;
+  text-align: center;
+  background-color: rgb(46, 46, 46);
+}
+.case1 h2 {
+  font-size: 30px;
+}
+.case1 img {
+  width: 60%;
+  height: auto;
+}
+.case1 .red {
+  color: rgb(194, 3, 3);
+
+  font-size: 40px;
+}
+
+.case1 .pink {
+  color: rgb(255, 1, 221);
+
+  font-size: 40px;
+}
+
+.case1 .purple {
+  color: rgb(138, 43, 226);
+
+  font-size: 40px;
+}
+
+.case1 .blue {
+  color: rgb(37, 149, 223);
+
+  font-size: 40px;
+}
+
+.case2 {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: rgb(46, 46, 46);
+}
+.case2 img {
+  margin-top: 10px;
+}
+.case3 {
+  grid-column: 2;
+  grid-row: 2;
+  background-color: rgb(46, 46, 46);
+}
+.case3 img {
+  margin-top: 10px;
+}
+.case4 {
+  grid-column: 2;
+  grid-row: 3;
+  background-color: rgb(46, 46, 46);
+}
+.case4 img {
+  margin-top: 10px;
+}
+.prev,
+.next {
+  top: 4%;
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/*-----------------------------------------------------*/
+
+section#games {
+  background-color: rgb(63, 62, 62);
+}
+
+section#games .container {
+  text-align: center;
+  border-radius: 1%;
+  margin: auto;
+  width: 80%;
+  height: 700px;
+  color: white;
+  background-color: rgb(46, 46, 46);
+  line-height: 35px;
+}
+section#games .container h1 {
+  font-size: 60px;
+}
+section#games .container h2 {
+  margin-top: 15px;
+  position: absolute;
+  font-size: 40px;
+}
+section#games .container .text {
+  display: inline-flex;
+  flex-direction: row;
+  background-color: rgb(61, 61, 61);
+  width: 55vh;
+  margin: 30px auto auto;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  padding: 50px 10px;
+  transition: 0.4s ease-in-out;
+ 
+}
+
+section#games .container .text #a,
+#b,
+#c,
+#d {
+  transition: 0.4s ease-in-out;
+  float: left;
+  margin-top: 100px;
+  display: none;
+  opacity: 0;
+}
+section#games .container .text p{
+  font-size: 17px;
+}
+
+/*
+section#games .container .text h2 {
+  
+}
+*/
+
+@media (max-width: 1040px){
+ section#games .container .text{
+  width: 300px;
+  
+ }
+ section#games .container h1 {
+  font-size: 40px;
+  margin-top: 15px;
+}
+ 
+ section#games .container .text h2{
+  font-size: 30px;
+}
+section#games .container .text p{
+  font-size: 13px;
+}
+.prev, .next{
+  top: 10%;
+}
+
+.case1 h2{
+  font-size: 20px;
+}
+.case1{
+  line-height: 40px;
+  height: 100px;
+}
+
+}
+
+@media (max-width: 955px) {
+  .checkbtn {
+    display: block;
+    margin: 22px 15px;
+    line-height: 30px;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #28343f;
+    top: 70px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  nav ul li {
+    display: block;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
