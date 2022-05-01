@@ -71,59 +71,117 @@ for (let i = 0; i < theBox.length; i++) {
   theBox[i].addEventListener("click", function () {
     if (i == 0) {
       if (theBox[i].style.height == "180px") {
-        theBox[i + 2].style.opacity = "0";
-        theBox[i].style.height = "420px";
         
+        for(let j = 0; j < theBox.length; j++) {
+          
+          if(j == 0)
+          {
+            theBox[j].style.height = "420px"
+          }
+          else
+          {
+            theBox[j].style.display = "none";
+          }
+        }
+
       } else {
-        theBox[i].style.height = "180px";
-        theBox[i + 1].style.height = "180px";
-        theBox[i + 2].style.opacity = "1";
+        for(let j = 0; j < theBox.length; j++) {
+          
+          theBox[j].style.height = "180px"
+          theBox[j].style.display = "inline-block";
+          
+        }
       }
       checkA();
     } else if (i == 1) {
       if (theBox[i].style.height == "180px") {
-        theBox[i].style.height = "420px";
-        theBox[i + 1].style.display = "none";
-        theBox[i + 2].style.display = "none";
+        
+        for(let j = 0; j < theBox.length; j++) {
+          
+          if(j == 1)
+          {
+            theBox[j].style.height = "420px"
+          }
+          else
+          {
+            theBox[j].style.display = "none";
+          }
+        }
+
       } else {
-        theBox[i].style.height = "180px";
-        theBox[i - 1].style.height = "180px";
-        theBox[i + 1].style.display = "inline-block";
-        theBox[i + 2].style.display = "inline-block";
+        for(let j = 0; j < theBox.length; j++) {
+          
+          theBox[j].style.height = "180px"
+          theBox[j].style.display = "inline-block";
+          
+        }
       }
       checkB();
     } else if (i == 2) {
       if (theBox[i].style.height == "180px") {
-        theBox[i].style.height = "420px";
-        theBox[i - 1].style.display = "none";
-        theBox[i - 2].style.display = "none";
+        
+        for(let j = 0; j < theBox.length; j++) {
+          
+          if(j == 2)
+          {
+            theBox[j].style.height = "420px"
+          }
+          else
+          {
+            theBox[j].style.display = "none";
+          }
+        }
+
       } else {
-        theBox[i].style.height = "180px";
-        theBox[i + 1].style.height = "180px";
-        theBox[i - 1].style.display = "inline-block";
-        theBox[i - 2].style.display = "inline-block";
+        for(let j = 0; j < theBox.length; j++) {
+          
+          theBox[j].style.height = "180px"
+          theBox[j].style.display = "inline-block";
+          
+          
+        }
       }
       checkC();
     } else if (i == 3) {
       if (theBox[i].style.height == "180px") {
-        theBox[i].style.height = "420px";
-        theBox[i - 2].style.display = "none";
-        theBox[i - 3].style.display = "none";
+        
+        for(let j = 0; j < theBox.length; j++) {
+          
+          if(j == 3)
+          {
+            theBox[j].style.height = "420px"
+          }
+          else
+          {
+            theBox[j].style.display = "none";
+          }
+        }
+
       } else {
-        theBox[i].style.height = "180px";
-        theBox[i - 1].style.height = "180px";
-        theBox[i - 2].style.display = "inline-block";
-        theBox[i - 3].style.display = "inline-block";
+        for(let j = 0; j < theBox.length; j++) {
+          
+          theBox[j].style.height = "180px"
+          theBox[j].style.display = "inline-block";
+          
+        }
       }
       checkD();
     }
   });
 }
+var num = 0;
 var slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
   showSlides((slideIndex += n));
+  if(n == 1)
+  {
+    num++;
+  }
+  else{
+    num--;
+  }
 }
 
 function currentSlide(n) {
@@ -132,7 +190,9 @@ function currentSlide(n) {
 
 function showSlides(n) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
+  var slides = document.getElementsByClassName("mySlidesfade");
+  var images = document.getElementsByClassName("img");
+  var numbertext = document.getElementsByClassName("numbertext");
   if (n > slides.length) {
     slideIndex = 1;
   }
@@ -142,6 +202,60 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
+  document.querySelector(".trailer").style.display = "none";
 
+  for (let i = 0; i < numbertext.length; i++) {
+    numbertext[i].style.display = "block";
+  }
+
+  for (let i = 0; i < images.length; i++) {
+    images[i].style.display = "inline";
+  }
   slides[slideIndex - 1].style.display = "block";
+}
+
+document.querySelector(".play").addEventListener("click", () => {
+  document.querySelector(".video").play();
+});
+
+function cancel()
+{
+    location.href = "login.php";
+}
+
+function toggle() {
+  
+  var images = document.getElementsByClassName("img");
+  var numbertext = document.getElementsByClassName("numbertext");
+  var video = document.querySelector(".trailer");
+  var source = ['videos/ak47.mp4', 'videos/mp9.mp4','videos/duals.mp4','videos/famas.mp4',
+    'videos/mp7.mp4', 'videos/m4a1s.mp4', 'videos/usp.mp4', 'videos/ppbizon.mp4', 'videos/g3sg1.mp4',
+    'videos/xm1014.mp4', 'videos/mac10.mp4', 'videos/fiveseven.mp4', 'videos/mp5sd.mp4',
+    'videos/sawedoff.mp4', 'videos/p2000.mp4', 'videos/mag7.mp4', 'videos/scar20.mp4'];
+    
+
+  if (video.style.display == "none") {
+    if(num == 17)
+    {
+      num = 0;
+    }
+    else if(num == -1)
+    {
+      num = 16;
+    }
+    document.getElementById('change').src = source[num];
+    video.style.display = "block";
+
+    for (let i = 0; i < images.length; i++) {
+      numbertext[i].style.display = "none";
+      images[i].style.display = "none";
+    }
+  } else {
+    video.style.display = "none";
+
+    for (let i = 0; i < images.length; i++) {
+      numbertext[i].style.display = "block";
+      images[i].style.display = "inline";
+    }
+  }
 }

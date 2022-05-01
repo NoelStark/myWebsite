@@ -11,12 +11,11 @@
       <div class="container">
         
         <h1>Sign Up</h1>
-        <p>Please fill in this form to create an account.</p>
+        <p>Please fill in this form to create an account. <a href="login.php">Login</a></p>
         
         <label for="usn" required><b>Username</b></label>
         <input type="text" placeholder="Username" id="usn" name="usn" required />
         <label for="email"><b>Email</b></label>
-        
         <input type="text" placeholder="Enter Email" name="email" required />
         <label for="psw"><b>Password</b></label>
         <input

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php
+session_start();?>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
@@ -10,8 +12,11 @@
         <script src="https://kit.fontawesome.com/32e05b2de2.js"></script>
     </head>
     <body>
+  
+        
         <nav class="nav-area">
-            <div class="menu-wrapper">
+            <!---->
+            
             <input type="checkbox" id="check">
         
             <label for="check" class="checkbtn">
@@ -19,18 +24,32 @@
             </label>
 
             <div class="navbar">
-                
                 <a href="index.php"><img src="bilder/nedladdning.png"></a>
-                
             </div>
-            <ul>
+            
+            
+            <ul id = "menu">
+            
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Cases</a></li>
                 <li><a href="#games">Updates</a></li>
-                <li><a href="login.php">Log in</a></li>
-                <li><a href="signup.php">Sign Up</a></li>
-                        </div>
-                    </div>
+
+                
+        <?php
+        if(isset($_SESSION['loggedin']))
+        {
+           echo '<li><a href="logout.php"  id="login">Log out</a></li>';
+        }
+        else
+        {
+            echo '<li><a href="login.php" id="logisn">Log in</a></li>';
+            echo '<li><a href="signup.php" id="logisn">Sign Up</a></li>';
+        }
+        ?>
+               
+                
+                </div>
+            </div>
                 
             </ul>
         </div>
@@ -47,136 +66,137 @@
         <div class="container">
         <div class="case1">
             <h2>The Dreams & Nightmare Case</h2>
-            <div class="mySlides fade">
-                <div class="numbertext">1/17</div>
-                <img src="bilder/ak47.png">
-
-                <div class="red"><p>AK47 | Nightwish</p></div>
-                
+            <div class="trailer">
+                <video src= ""controls="true" autoplay id = "change" ></video>
             </div>
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
+                <div class="numbertext">1/17</div>
+                <img src="bilder/ak47.png" class="img">
+                <div class="red"><p>AK47 | Nightwish</p></div>  
+            </div>
+            <div class="mySlidesfade">
                 <div class="numbertext">2/17</div>
-                <img src="bilder/mp9.png">
+                <img src="bilder/mp9.png" class="img">
 
                 <div class="red"><p>MP9 | Starlight Protector</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">3/17</div>
-                <img src="bilder/dual.png">
+                <img src="bilder/dual.png" class="img">
 
                 <div class="pink"><p>Dual Berettas | Melondrama</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">4/17</div>
-                <img src="bilder/famas.png">
+                <img src="bilder/famas.png" class="img">
 
                 <div class="pink"><p>Famas | Rapid Eye Movement</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">5/17</div>
-                <img src="bilder/mp7.png">
+                <img src="bilder/mp7.png" class="img">
 
                 <div class="pink"><p>MP7 | Abyssal Apparition</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">6/17</div>
-                <img src="bilder/m4a1.png">
+                <img src="bilder/m4a1.png" class="img">
 
-                <div class="purple"><p>MP7 | Abyssal Apparition</p></div>
+                <div class="purple"><p>M4A1-S | Night Terror</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">7/17</div>
-                <img src="bilder/usp.png">
+                <img src="bilder/usp.png" class="img">
 
-                <div class="purple"><p>MP7 | Abyssal Apparition</p></div>
+                <div class="purple"><p>USP-S | Ticket to Hell</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">8/17</div>
-                <img src="bilder/pp-bizon.png">
+                <img src="bilder/pp-bizon.png" class="img">
 
                 <div class="purple"><p>PP-Bizon | Space Cat</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">9/17</div>
-                <img src="bilder/g3sg1.png">
+                <img src="bilder/g3sg1.png" class="img">
 
-                <div class="purple"><p>PP-Bizon | Space Cat</p></div>
+                <div class="purple"><p>G3SG1 | Dream Glade</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">10/17</div>
-                <img src="bilder/xm.png">
+                <img src="bilder/xm.png" class="img">
 
                 <div class="purple"><p>XM1014 | Zombie Offensive</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">11/17</div>
-                <img src="bilder/mac-10.png">
+                <img src="bilder/mac-10.png" class="img">
 
-                <div class="blue"><p>XM1014 | Zombie Offensive</p></div>
+                <div class="blue"><p>MAC-10 | Ensnared</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">12/17</div>
-                <img src="bilder/fiveseven.png">
+                <img src="bilder/fiveseven.png" class="img">
 
                 <div class="blue"><p>Five-SeveN | Scrawl</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">13/17</div>
-                <img src="bilder/mp5-sd.png">
+                <img src="bilder/mp5-sd.png" class="img">
 
                 <div class="blue"><p>MP5-SD | Necro Jr.</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">14/17</div>
-                <img src="bilder/sawed-off.png">
+                <img src="bilder/sawed-off.png" class="img">
 
                 <div class="blue"><p>Sawed-Off | Spirit Board</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">15/17</div>
-                <img src="bilder/p2000.png">
+                <img src="bilder/p2000.png" class="img">
 
                 <div class="blue"><p>P2000 | Lifted Spirits</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">16/17</div>
-                <img src="bilder/mag7.png">
+                <img src="bilder/mag7.png" class="img">
 
                 <div class="blue"><p>MAG-7 | Foresight</p></div>
                 
             </div>
 
-            <div class="mySlides fade">
+            <div class="mySlidesfade">
                 <div class="numbertext">17/17</div>
-                <img src="bilder/scar2.png">
+                <img src="bilder/scar2.png" class="img">
 
                 <div class="blue"><p>SCAR-20 | Poultrygeist</p></div>
                 
@@ -185,25 +205,43 @@
 
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <br>
+            <br>
+            <br>
+            <?php
+            if(isset($_SESSION['loggedin']))
+            {
+                echo '<button onclick="toggle();" class="btn" id = "open">Preview</button>';
+            }
+            else
+            {
+                echo '<button onclick= "cancel();" class="btn" id = "close">Preview</button>';
+            }
+            ?>
+            
+            
+        
         </div>
             <div class="case2">
                 <h2>Riptide</h2>
-                <a href="#about"><img src="bilder/riptideCase.png" alt=""></a>
+                <a href="#about"><img src="bilder/riptideCase.png" alt="" class="caseImg"></a>
             </div>
 
             <div class="case3">
                 <h2>Snakebite</h2>
-                <a href="#about"><img src="bilder/snakebite.png" alt=""></a>
+                <a href="#about"><img src="bilder/snakebite.png" alt="" class="caseImg"></a>
             </div>
 
             <div class="case4">
                 <h2>Broken Fang</h2>
-                <a href="#about"><img src="bilder/brokenfang.png" alt=""></a>
+                <a href="#about"><img src="bilder/brokenfang.png" alt="" class="caseImg"></a>
             </div>
 
             
+            
 
         </div>
+        
 
         </section>
 
@@ -293,6 +331,7 @@
         </section>
 
         <script src="alpha.js">
+            
 
 
 

@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  html {
+    /*Creates a smooth scroll*/
+    scroll-behavior: smooth;
+  }
+  :root {
+    --cardMaxHeight: 30.5em;
+    --cardPadding: -5em;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: url("bilder/IMG_4822.jpg");
+  }
+  .navbar > img, /*Have everything on the navbar on same row*/
+  .navbar > p {
+    display: inline-block;
+  }
+  .navbar {
+    /*The left side of the navbar(Picture and Alpha Family)*/
+    display: inline-block;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Babas Neue;
+    position: fixed;
+  }
+  .navbar a {
+    /*Changes the color of Alpha Family on navbar*/
+    color: white;
+  }
+  img {
+    /*Handles the image in top left corner*/
+    /*background-color: #080808;*/
+    height: 100px;
+    width: auto;
+    vertical-align: middle;
+    margin-top: -16px;
+  }
+  
+  .menu {
+    background-color: #080808;
+    z-index: 5;
+  }
+  
+  nav {
+      top: 0;
+    /*The actual navbar*/
+    background: #080808;
+    height: 70px;
+    width: 100%;
+    vertical-align: middle; /*Alpha Family is centered on navbar*/
+    position: fixed; /*The navbar is fixed and doesnt disappear*/
+  }
+  
+  nav ul {
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li {
+    display: inline-block;
+    line-height: 79px;
+    margin: 0 60px;
+  }
+  nav ul li a {
+    color: white;
+    font-size: 19px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  
+  li a.active,
+  li a:hover {
+    background-color: #343435;
+    transition: 0.5s;
+  }
+  
+  .checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  
+#check {
+display: none;
+}
+
+
+.container{
+    background-color: rgb(29, 29, 29);
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 100px;
+    width: 60%;
+    height: 80%;
+    opacity: 0.93;
+    border-radius: 5%;
+    line-height: 100px;
+} 
+/*
+.container .box p{
+  padding: 6px;
+  font-size: 18px;
+  border: 1px solid rgb(141, 140, 140);
+  
+  color: white;
+  width: 60%;
+}
+*/
+
+.container .box
+{
+  padding: 10px;
+  width: 100%;
+}
+.container .box input{
+  width: 400px;
+  height: 50px;
+}
+.container .box p
+{
+  
+  width: 100%;
+  font-size: 20px;
+  border: 1px solid rgb(141, 140, 140);
+
+}
+
+.container .box button
+{
+  height: 50px;
+  width: 100px;
+}

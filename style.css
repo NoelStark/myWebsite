@@ -24,23 +24,29 @@ body {
 }
 .navbar {
   /*The left side of the navbar(Picture and Alpha Family)*/
-  display: inline;
+  display: inline-block;
   color: white;
   font-size: 35px;
   font-weight: bold;
   font-family: Babas Neue;
+  position: fixed;
 }
-
 .navbar a {
   /*Changes the color of Alpha Family on navbar*/
   color: white;
 }
 img {
   /*Handles the image in top left corner*/
+  /*background-color: #080808;*/
   height: 100px;
   width: auto;
   vertical-align: middle;
   margin-top: -16px;
+}
+
+.menu {
+  background-color: #080808;
+  z-index: 5;
 }
 
 nav {
@@ -50,7 +56,6 @@ nav {
   width: 100%;
   vertical-align: middle; /*Alpha Family is centered on navbar*/
   position: fixed; /*The navbar is fixed and doesnt disappear*/
-  z-index: 2;
 }
 
 nav ul {
@@ -60,7 +65,7 @@ nav ul {
 nav ul li {
   display: inline-block;
   line-height: 79px;
-  margin: 0 15px;
+  margin: 0 60px;
 }
 nav ul li a {
   color: white;
@@ -72,7 +77,7 @@ nav ul li a {
 
 li a.active,
 li a:hover {
-  background: #343435;
+  background-color: #343435;
   transition: 0.5s;
 }
 
@@ -110,9 +115,32 @@ section p {
 }
 
 section#home {
-  /*The first 'page' has this background*/
-  /* background: url(alphafamily_bgs.jpg) no-repeat center center/cover;*/
-  background: url(bilder/IMG_4822.jpg) no-repeat center center/cover;
+  background: url(bilder/) no-repeat center center/cover;
+}
+
+/* CSS */
+button {
+  background-color: #111111;
+  border: 2px solid #1a1a1a;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 20px;
+  margin-top: -15px;
+}
+button:hover {
+  background: #080808;
+}
+
+.img {
+  display: inline;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
 /*------------------------------------------------------------------------*/
@@ -123,13 +151,30 @@ section#about {
 section#about .container {
   text-align: center;
   width: 70%;
-  height: 60%;
+  height: 65%;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 1em;
   padding: 0 10px;
   color: white;
+}
+
+.trailer {
+  display: none;
+}
+
+video {
+  width: 80.3%;
+}
+.trailer.active {
+  display: grid;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.numbertext.active {
+  display: none;
 }
 
 .case1 {
@@ -194,17 +239,27 @@ section#about .container {
 .case4 img {
   margin-top: 10px;
 }
+.case2.active {
+  display: none;
+}
+
+.case3.active {
+  display: none;
+}
+
+.case4.active {
+  display: none;
+}
+
 .prev,
 .next {
-  top: 4%;
   cursor: pointer;
-  position: relative;
   padding: 10px;
   color: rgb(255, 255, 255);
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 1px 1px 0;
   user-select: none;
 }
 
@@ -214,7 +269,7 @@ section#about .container {
 
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  color: rgb(132, 131, 131);
 }
 /*-----------------------------------------------------*/
 
@@ -236,20 +291,20 @@ section#games .container h1 {
   font-size: 60px;
 }
 section#games .container h2 {
+  position: relative;
   margin-top: 15px;
-  position: absolute;
   font-size: 40px;
+  
 }
 section#games .container .text {
-  display: inline-flex;
-  flex-direction: row;
+  justify-content: center;
+  display: inline-block;
   background-color: rgb(61, 61, 61);
-  width: 55vh;
+  width: 53vh;
   margin: 30px auto auto;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
   padding: 50px 10px;
   transition: 0.4s ease-in-out;
- 
 }
 
 section#games .container .text #a,
@@ -258,11 +313,11 @@ section#games .container .text #a,
 #d {
   transition: 0.4s ease-in-out;
   float: left;
-  margin-top: 100px;
+  margin-top: 30px;
   display: none;
   opacity: 0;
 }
-section#games .container .text p{
+section#games .container .text p {
   font-size: 17px;
 }
 
@@ -272,39 +327,72 @@ section#games .container .text h2 {
 }
 */
 
-@media (max-width: 1040px){
- section#games .container .text{
-  width: 300px;
-  
- }
- section#games .container h1 {
-  font-size: 40px;
-  margin-top: 15px;
-}
- 
- section#games .container .text h2{
-  font-size: 30px;
-}
-section#games .container .text p{
-  font-size: 13px;
-}
-.prev, .next{
-  top: 10%;
+@media (max-width: 1040px) {
+
+  section#about .container 
+  {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+  }
+  section#games .container .text {
+    width: 300px;
+   
+  }
+  section#games .container h1 {
+    font-size: 40px;
+    margin-top: 15px;
+    
+  }
+
+  section#games .container .text h2 {
+    font-size: 30px;
+  }
+  section#games .container .text p {
+    font-size: 13px;
+  }
+  .prev,
+  .next {
+    top: 10%;
+  }
+
+  .case1 h2 {
+    font-size: 20px;
+  }
+  .case1{
+    grid-column: 1/4;
+    grid-row: 1/2;
+  }
+  .case1 {
+    line-height: 40px;
+  }
+
+  .case2 {
+    grid-column: 1/1;
+    grid-row: 2;
+  }
+  .case2 img, .case3 img, .case4 img{
+    width: 40px;
+    height: auto;
+  }
+  .case2, .case3, .case4{
+    font-size: 10px;
+  }
+
+  .case3 {
+    grid-column: 2/2;
+    grid-row: 2;
+  }
+
+  .case4 {
+    grid-column: 3/3;
+    grid-row: 2;
+  }
 }
 
-.case1 h2{
-  font-size: 20px;
-}
-.case1{
-  line-height: 40px;
-  height: 100px;
-}
-
-}
-
-@media (max-width: 955px) {
+@media (max-width: 1100px) {
   .checkbtn {
     display: block;
+    z-index: 1;
     margin: 22px 15px;
     line-height: 30px;
   }

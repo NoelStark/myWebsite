@@ -11,7 +11,7 @@
       <div class="container">
         
         <h1>Log in</h1>
-        <p>Please fill in your username and password to log in.</p>
+        <p>Please fill in your username and password to log in. <a href="signup.php">Sign up</a></p>
         
         <label for="usn" required><b>Username</b></label>
         <input type="text" placeholder="Username" id="usn" name="usn" required />

@@ -43,16 +43,13 @@ else
 
   if($query->num_rows == 0) 
   {
-  $sql = "INSERT INTO base1 (username, password)
-  VALUES ('$usn', '$psw')";
+    $sql = "INSERT INTO base1 (username, password)
+    VALUES ('$usn', '$psw')";
   
-    
-    if (mysqli_query($conn, $sql)) 
-    {
       $code = bin2hex(random_bytes(6));
     $_SESSION['code'] = $code;
-    $APP_URL = 'http://localhost/documents/verify.php';
-    $activation_link = $APP_URL . "/verify.php?&activation_code=$code";
+    $APP_URL = 'http://localhost/cs';
+    $activation_link = $APP_URL . "/activate.php?&activation_code=$code";
       $time_of_creation = "UPDATE `base1` SET time_of_creation= CURRENT_TIMESTAMP() WHERE username = '$usn'";
       $active = "UPDATE `base1` SET activation_code = '$code' WHERE username = '$usn'";
 
@@ -83,30 +80,21 @@ else
         try 
         {
           
-            $mail->send();
-            echo "Sent yes";
-            mysqli_query($conn, $time_of_creation);
-      mysqli_query($conn, $active);
-      echo "Account successfully created!";
-      header("refresh:3;url=index.php" );
+        $mail->send();
+        echo "Sent yes";
+        mysqli_query($conn, $sql);
+        mysqli_query($conn, $time_of_creation);
+        mysqli_query($conn, $active);
+        echo "Account successfully created!";
+        header("refresh:3;url=index.php" );
         } 
         catch(Exception $e)
         {
             echo "Wrong".$e;
         }
         
-
-
     $_SESSION[$usn] = 3;
-    } 
-
-    else 
-    {
-      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-      
-      //mysqli_close($conn);
-  }
+      }
 
   else
   {
