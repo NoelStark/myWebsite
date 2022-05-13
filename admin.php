@@ -1,8 +1,8 @@
 <?php
-$dbServername = "sql304.epizy.com";
-$dbUsername = "epiz_30985093";
-$dbPassword = "0eLRpQrCZS";
-$dbName = "epiz_30985093_base1";
+$dbServername = "localhost";
+$dbUsername = "root";
+$dbPassword = "";
+$dbName = "login";
 
 $conn = mysqli_connect($dbServername, 
 $dbUsername, $dbPassword, $dbName);
@@ -34,9 +34,10 @@ $dbUsername, $dbPassword, $dbName);
             
             <ul id = "menu">
             
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Cases</a></li>
-                <li><a href="#games">Updates</a></li>
+                <li><a href="index.php#home">Home</a></li>
+                <li><a href="index.php#about">Cases</a></li>
+                <li><a href="index.php#games">Updates</a></li>
+                <li><a href="admin.php">Control-Panel</a></li>
                 <li><a href="logout.php"  id="login">Log out</a></li>
                 </div>
             </div>
@@ -60,6 +61,9 @@ $dbUsername, $dbPassword, $dbName);
     </form>
  
         <?php
+        session_start();
+        $_SESSION['admin'] = 1;
+        $_SESSION['loggedin'] = 1;
         $usn = $_POST['usn'];
         $result = mysqli_query($conn,"SELECT username FROM base1 WHERE username = '$usn'");
         $count = mysqli_num_rows($result);

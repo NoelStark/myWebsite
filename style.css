@@ -115,7 +115,7 @@ section p {
 }
 
 section#home {
-  background: url(bilder/) no-repeat center center/cover;
+  background: url(bilder/IMG_4822.jpg) no-repeat center center/cover;
 }
 
 /* CSS */
@@ -291,16 +291,14 @@ section#games .container h1 {
   font-size: 60px;
 }
 section#games .container h2 {
-  position: relative;
   margin-top: 15px;
   font-size: 40px;
-  
 }
 section#games .container .text {
   justify-content: center;
   display: inline-block;
   background-color: rgb(61, 61, 61);
-  width: 53vh;
+  width: 40%;
   margin: 30px auto auto;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
   padding: 50px 10px;
@@ -334,19 +332,13 @@ section#games .container .text h2 {
     grid-template-columns: 1fr;
     grid-template-rows: 2fr 1fr 1fr;
   }
-  section#games .container .text {
-    width: 300px;
-   
-  }
+
   section#games .container h1 {
     font-size: 40px;
     margin-top: 15px;
     
   }
 
-  section#games .container .text h2 {
-    font-size: 30px;
-  }
   section#games .container .text p {
     font-size: 13px;
   }
@@ -418,5 +410,19 @@ section#games .container .text h2 {
   }
   #check:checked ~ ul {
     left: 0;
+  }
+
+   .text {
+     display: flex !important;
+     flex-direction: column !important;
+    justify-content: center;
+    height: 100px !important;
+    width: 70%!important;
+    background-color: rgb(61, 61, 61);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.4s ease-in-out;
+  }
+  section#games .container .text h2{
+    font-size: 15px;
   }
 }

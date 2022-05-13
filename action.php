@@ -1,8 +1,8 @@
 <?php
-$dbServername = "sql304.epizy.com";
-$dbUsername = "epiz_30985093";
-$dbPassword = "0eLRpQrCZS";
-$dbName = "epiz_30985093_base1";
+$dbServername = "localhost";
+$dbUsername = "root";
+$dbPassword = "";
+$dbName = "login";
 
 $conn = mysqli_connect($dbServername, 
 $dbUsername, $dbPassword, $dbName);
@@ -22,7 +22,7 @@ else
 {
 
 
-if(isset($_GET['hello']))
+if(isset($_GET['hello']))//Kontrollerar om konto finns
 {
     $result = mysqli_query($conn,"SELECT username FROM base1 WHERE username = '$usn'");
     while($row = mysqli_fetch_assoc($result))
@@ -34,30 +34,27 @@ if(isset($_GET['hello']))
 }
 
 
-    if(isset($_GET['disable']))
+    if(isset($_GET['disable']))//Om admin klickar på Disable låses kontot
     {
         mysqli_query($conn,"UPDATE base1 SET isDisabled = '1' WHERE username = '$usn'");
         echo "disabeld";
     header("refresh:0;url=admin.php");
 
-        unset($_GET['disable']);
         
     }
-    if(isset($_GET['unlock']))
+    if(isset($_GET['unlock']))//Om admin klickar på unlock låses kontot upp
     {
         mysqli_query($conn,"UPDATE base1 SET isDisabled = '0' WHERE username = '$usn'");
         echo "unlocked";
     header("refresh:0;url=admin.php");
 
-        unset($_GET['unlock']);
 
     }
-    if(isset($_GET['delete']))
+    if(isset($_GET['delete']))//Om admin klickar på Delete raderas kontot
     {
         mysqli_query($conn,"DELETE FROM base1 WHERE username = '$usn'");
     header("refresh:0;url=admin.php");
 
-        unset($_GET['delete']);
 
     }
 }

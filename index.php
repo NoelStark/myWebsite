@@ -13,22 +13,21 @@ session_start();?>
     </head>
     <body>
   
-        
+        <!--Navigationsbar-->
         <nav class="nav-area">
-            <!---->
             
-            <input type="checkbox" id="check">
+            <input type="checkbox" id="check"> <!--Det som kommer att bli hamburgermenyn-->
         
             <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>
             </label>
 
             <div class="navbar">
-                <a href="index.php"><img src="bilder/nedladdning.png"></a>
+                <a href="index.php"><img src="bilder/nedladdning.png"></a> <!--Bild längst upp till vänster-->
             </div>
             
             
-            <ul id = "menu">
+            <ul id = "menu"> <!--Menyn på navigationsbar-->
             
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Cases</a></li>
@@ -36,11 +35,18 @@ session_start();?>
 
                 
         <?php
-        if(isset($_SESSION['loggedin']))
+        ///Nedan sker en förändring i navigationsbar beroende på om användare är inloggad eller inte
+
+        if(isset($_SESSION['admin'])) //Om admin är inloggad
         {
+            echo'<li><a href="admin.php">Control-Panel</a></li>';
+        }
+        if(isset($_SESSION['loggedin'])) //Om vanlig användare är inlogggad
+        {
+            
            echo '<li><a href="logout.php"  id="login">Log out</a></li>';
         }
-        else
+        else//Om ej inloggad
         {
             echo '<li><a href="login.php" id="logisn">Log in</a></li>';
             echo '<li><a href="signup.php" id="logisn">Sign Up</a></li>';
@@ -55,20 +61,22 @@ session_start();?>
         </div>
         </nav>
         
-        <section id="home">
+        <section id="home"> <!--Sektion 1-->
             <h1>CSGO</h1>
         </section>
 
-        <section id="about">
+        <section id="about"> <!--Sektion 2-->
         <h1>Cases</h1>
         <br>
         
         <div class="container">
         <div class="case1">
-            <h2>The Dreams & Nightmare Case</h2>
-            <div class="trailer">
+            <h2>The Dreams & Nightmare Case</h2> <!--Låda 1 som innefattar de olika vapen-->
+            <div class="trailer"> <!--Videon som dyker upp om man klickar på "Preview"-->
                 <video src= ""controls="true" autoplay id = "change" ></video>
             </div>
+
+            <!--Nedan är de olika vapnena-->
             <div class="mySlidesfade">
                 <div class="numbertext">1/17</div>
                 <img src="bilder/ak47.png" class="img">
@@ -209,7 +217,7 @@ session_start();?>
             <br>
             <br>
             <?php
-            if(isset($_SESSION['loggedin']))
+            if(isset($_SESSION['loggedin']))//Om man är inloggad kan man kolla på videon, annars omdirekteras man till logga in
             {
                 echo '<button onclick="toggle();" class="btn" id = "open">Preview</button>';
             }
@@ -245,7 +253,7 @@ session_start();?>
 
         </section>
 
-        <section id="games">
+        <section id="games"> <!--Sektion 3 som innefattar nya uppdateringar-->
 
             <div class="container">
                 
@@ -298,126 +306,9 @@ session_start();?>
 
 
 
-          <!--
-            <h1>CSGO</h1>
-            
-            <main>
-            
-            <input id="toggle" type="checkbox">
-            
-                <img src="ak47.png" alt="">
-                <h2>Rifles</h2>
-
-            <label for="toggle" >Click to Expand</label>
-            
-            <div id="offer">
-                
-                <p><img src="ak47.png" alt="" class="pic"> AK47</p>
-                <br>
-                <p><img src="m4a1.png" alt="" class="pic"> M4A1-S</p>
-                <br>
-                <p><img src="m4a4.png" alt="" class="pic">M4A4</p>
-                <br>
-                Galil
-                <br>
-                
-               
-            </div>
-            
-
-        
-        </main>
--->
         </section>
 
         <script src="alpha.js">
-            
-
-
-
-     /* function changec() { Clan 1
-       /*var xDiv = document.getElementById('box');
-       
-       if (xDiv.style.height == ''){
-           xDiv.style.height = '530px'
-           setTimeout(function(){document.getElementById('text-1').style.opacity = '1';}, 360)
-           document.getElementById('text-1').style.display = 'block';
-       }
-       /*
-         else 
-       {
-        document.getElementById('text-1').style.opacity = '0';
-        document.getElementById('text-1').style.display = 'none';
-           xDiv.style.height = ''
-        } 
-        
-        
-        }
-        
-    function changed(){/*Clan 2
-        var xdiv = document.getElementById('box2');
-
-        if (xdiv.style.height == ''){
-           xdiv.style.height = '530px';
-           setTimeout(function(){document.getElementById('text-2').style.opacity = '1';}, 360)
-           document.getElementById('text-2').style.display = 'block';
-        }
-       else 
-       {
-        document.getElementById('text-2').style.opacity = '0';
-        document.getElementById('text-2').style.display = 'none';
-           xdiv.style.height = ''
-        } 
-    }
-
-    function changee(){ /*Clan 3
-        var xdiv = document.getElementById('box3');
-
-        if (xdiv.style.height == ''){
-           xdiv.style.height = '530px';
-           setTimeout(function(){document.getElementById('text-3').style.opacity = '1';}, 360)
-           document.getElementById('text-3').style.display = 'block';
-        }
-       else 
-       {
-        document.getElementById('text-3').style.opacity = '0';
-        document.getElementById('text-3').style.display = 'none';
-           xdiv.style.height = ''
-        } 
-    }
-
-    function changef(){ /*Clan 4*
-        var xdiv = document.getElementById('box4');
-
-        if (xdiv.style.height == ''){
-           xdiv.style.height = '530px';
-           setTimeout(function(){document.getElementById('text-4').style.opacity = '1';}, 360)
-           document.getElementById('text-4').style.display = 'block';
-        }
-       else 
-       {
-        document.getElementById('text-4').style.opacity = '0';
-        document.getElementById('text-4').style.display = 'none';
-           xdiv.style.height = ''
-        } 
-    }
-
-    function changeg(){
-        var xdiv = document.getElementById('box5');
-
-        if (xdiv.style.height == ''){
-           xdiv.style.height = '530px';
-           setTimeout(function(){document.getElementById('text-5').style.opacity = '1';}, 360)
-           document.getElementById('text-5').style.display = 'block';
-        }
-       else 
-       {
-        document.getElementById('text-5').style.opacity = '0';
-        document.getElementById('text-5').style.display = 'none';
-           xdiv.style.height = ''
-        } 
-    }
-    */
     
 
         </script>

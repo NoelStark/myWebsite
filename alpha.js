@@ -7,10 +7,8 @@ function checkA() {
   if (box1.style.display == "inline") {
     setTimeout(function () {
       box1.style.opacity = "0";
-      box2.style.opacity = "0";
     }, 100);
     box1.style.display = "none";
-    box2.style.display = "none";
   } else {
     setTimeout(function () {
       box1.style.opacity = "1";
@@ -22,10 +20,8 @@ function checkA() {
 function checkB() {
   if (box2.style.display == "inline") {
     setTimeout(function () {
-      box1.style.opacity = "0";
       box2.style.opacity = "0";
     }, 100);
-    box1.style.display = "none";
     box2.style.display = "none";
   } else {
     setTimeout(function () {
@@ -39,10 +35,8 @@ function checkC() {
   if (box3.style.display == "flex") {
     setTimeout(function () {
       box3.style.opacity = "0";
-      box4.style.opacity = "0";
     }, 100);
     box3.style.display = "none";
-    box4.style.display = "none";
   } else {
     setTimeout(function () {
       box3.style.opacity = "1";
@@ -55,9 +49,7 @@ function checkD() {
   if (box4.style.display == "flex") {
     setTimeout(function () {
       box4.style.opacity = "0";
-      box3.style.opacity = "0";
     }, 100);
-    box3.style.display = "none";
     box4.style.display = "none";
   } else {
     setTimeout(function () {
@@ -76,7 +68,7 @@ for (let i = 0; i < theBox.length; i++) {
           
           if(j == 0)
           {
-            theBox[j].style.height = "420px"
+            theBox[j].style.height = "440px"
           }
           else
           {
@@ -100,7 +92,7 @@ for (let i = 0; i < theBox.length; i++) {
           
           if(j == 1)
           {
-            theBox[j].style.height = "420px"
+            theBox[j].style.height = "440px"
           }
           else
           {
@@ -124,7 +116,7 @@ for (let i = 0; i < theBox.length; i++) {
           
           if(j == 2)
           {
-            theBox[j].style.height = "420px"
+            theBox[j].style.height = "440px"
           }
           else
           {
@@ -142,14 +134,15 @@ for (let i = 0; i < theBox.length; i++) {
         }
       }
       checkC();
-    } else if (i == 3) {
+    } 
+    else if (i == 3) {
       if (theBox[i].style.height == "180px") {
         
         for(let j = 0; j < theBox.length; j++) {
           
           if(j == 3)
           {
-            theBox[j].style.height = "420px"
+            theBox[j].style.height = "440px !important"
           }
           else
           {
@@ -162,6 +155,7 @@ for (let i = 0; i < theBox.length; i++) {
           
           theBox[j].style.height = "180px"
           theBox[j].style.display = "inline-block";
+          
           
         }
       }
