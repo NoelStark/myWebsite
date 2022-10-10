@@ -65,8 +65,8 @@ else
         $mail->Host = "smtp.gmail.com";
  
         $mail->SMTPAuth = true;
-        $mail->Username = 'stark.noel17@gmail.com';
-        $mail->Password = 'Noel123456789$';
+        $mail->Username = '';
+        $mail->Password = '';
 
         $mail->addAddress("$email");
         
